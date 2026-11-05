@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact Us | Reef Snorkeling Tours</title>
+  <meta name="description" content="Ask a question or request a date for snorkeling in Caye Caulker, Belize.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;700;800&display=swap">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="page">
+  <header class="site-header">
+    <a class="logo" href="./"><img src="images/logo.webp" alt="" width="253" height="298">Reef Snorkeling Tours</a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Open menu">
+      <svg class="icon line" viewBox="0 0 24 24"><path class="bars" d="M4 7h16M4 12h16M4 17h16"/><path class="x" d="M6 6l12 12M18 6 6 18"/></svg>
+    </button>
+    <div class="menu" id="menu">
+      <nav>
+        <a href="./#snorkeling">Snorkeling</a>
+        <a href="./#fishing">Fishing</a>
+        <a href="./#chartered-trips">Chartered Trips</a>
+        <a href="./#about">About</a>
+        <a href="contact.html" aria-current="page">Contact Us</a>
+      </nav>
+      <a class="btn btn-light" href="mailto:bookings@example.com?subject=Snorkeling%20trip">Book My Tour</a>
+    </div>
+  </header>
+
+  <main class="contact">
+    <div>
+      <h1>Contact us</h1>
+      <p class="contact-intro">Ask about a trip, a date or a group. We reply by email.</p>
+      <address>
+        <a href="mailto:bookings@example.com">bookings@example.com</a><br>
+        <a href="tel:+5010000000">+501 000 0000</a><br>
+        Caye Caulker, Belize
+      </address>
+    </div>
+
+    <form action="mailto:bookings@example.com" method="post" enctype="text/plain">
+      <label>Name
+        <input type="text" name="name" autocomplete="name" required>
+      </label>
+      <label>Email
+        <input type="email" name="email" autocomplete="email" required>
+      </label>
+      <label>Your question
+        <textarea name="message" rows="6" required></textarea>
+      </label>
+      <button class="btn btn-light" type="submit">Send</button>
+    </form>
+  </main>
+</div>
+
+<script src="menu.js"></script>
+</body>
+</html>
