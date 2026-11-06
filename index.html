@@ -15,86 +15,226 @@
 
 <svg hidden>
   <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-people" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6M16 4.8a3.5 3.5 0 0 1 0 6.4M18 14.3c2.3.7 3.5 2.6 3.5 5.7"/></symbol>
+  <symbol id="i-gift" viewBox="0 0 24 24"><path d="M3 8h18v4H3zM5 12v9h14v-9M12 8v13M12 8C11 5 7 4.5 7 6.5S10 8 12 8zM12 8c1-3 5-3.5 5-1.5S14 8 12 8z"/></symbol>
 </svg>
 
-<main class="hero">
-  <img class="hero-img" src="images/hero.jpg" alt="Silhouettes of a snorkeler's fins against the sun in deep blue water">
+<main>
+  <section class="hero">
+    <img class="hero-img" src="images/hero.jpg" alt="Silhouettes of a snorkeler's fins against the sun in deep blue water">
 
-  <header class="site-header">
-    <a class="logo" href="./"><img src="images/logo.webp" alt="" width="253" height="298">Reef Snorkeling Tours</a>
-    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Open menu">
-      <svg class="icon line" viewBox="0 0 24 24"><path class="bars" d="M4 7h16M4 12h16M4 17h16"/><path class="x" d="M6 6l12 12M18 6 6 18"/></svg>
-    </button>
-    <div class="menu" id="menu">
-      <nav>
-        <a href="#snorkeling">Snorkeling</a>
-        <a href="#fishing">Fishing</a>
-        <a href="#chartered-trips">Chartered Trips</a>
-        <a href="#about">About</a>
-        <a href="contact.html">Contact Us</a>
-      </nav>
-      <a class="btn btn-light" href="mailto:bookings@example.com?subject=Snorkeling%20trip">Book My Tour</a>
+    <header class="site-header">
+      <a class="logo" href="./"><img src="images/logo.webp" alt="" width="253" height="298">Reef Snorkeling Tours</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Open menu">
+        <svg class="icon line" viewBox="0 0 24 24"><path class="bars" d="M4 7h16M4 12h16M4 17h16"/><path class="x" d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+      <div class="menu" id="menu">
+        <nav>
+          <a href="./" aria-current="page">Home</a>
+          <a href="#snorkeling">Snorkeling</a>
+          <a href="#fishing">Fishing</a>
+          <a href="#chartered-trips">Chartered Trips</a>
+          <a href="#about">About</a>
+          <a href="contact.html">Contact Us</a>
+        </nav>
+        <a class="btn btn-light" href="contact.html?tour=general">Book My Tour</a>
+      </div>
+    </header>
+
+    <div class="hero-text">
+      <h1>Snorkeling in Caye Caulker</h1>
+      <p class="hero-desc">Half day and full day reef trips. Small boats, beautiful marine life and local guides.</p>
+      <div class="hero-actions">
+        <a class="btn btn-light" href="contact.html?tour=snorkeling">Book now</a>
+        <a class="btn btn-ghost" href="#tours">View Tours</a>
+      </div>
+      <div class="trust">
+        <span class="faces">
+          <img src="images/snorkeler-1.webp" alt="" width="160" height="160">
+          <img src="images/snorkeler-2.webp" alt="" width="160" height="160">
+          <img src="images/snorkeler-3.webp" alt="" width="160" height="160">
+        </span>
+        <p><span>5000+</span>Happy Snorkelers</p>
+      </div>
     </div>
-  </header>
 
-  <div class="hero-text">
-    <h1>Snorkeling in Caye Caulker</h1>
-    <p class="hero-desc">Half day and full day reef trips. Small boats, beautiful marine life and local guides.</p>
-    <div class="hero-actions">
-      <a class="btn btn-light" href="mailto:bookings@example.com?subject=Snorkeling%20trip">Book now</a>
-      <a class="btn btn-ghost" href="contact.html">Ask us a Question</a>
+    <div class="strip">
+      <ul class="cards">
+        <li><button class="card" type="button" aria-current="true" data-tour="half-day-tour" data-where="Caye Caulker Marine Reserve" data-time="3 hours" data-desc="Three snorkel sites: Coral Garden, Shark and Stingray Alley and South Channel, plus tarpon and magnificent frigatebird feeding. Includes water, fruit, snorkeling equipment and the park fee.">
+          <img src="images/half-day-tour-sm.jpg" alt="A snorkeler in a life vest above a school of small fish" width="640" height="480">
+          <span class="card-top"><span class="card-chip snorkeling">Snorkeling</span></span>
+          <span class="card-text"><strong>Half Day Tour</strong><span>3 hours, 3 snorkel sites</span></span>
+        </button></li>
+        <li><button class="card" type="button" data-tour="full-day-tour" data-where="Hol Chan Marine Reserve" data-time="6 hours" data-desc="Four stops: Coral Garden, Shark and Ray Alley, Hol Chan (main) and the Sunken Barge. Bonus tarpon and magnificent frigatebird feeding. Includes food, water, fruit, snorkeling equipment and the park fee.">
+          <img src="images/full-day-tour-sm.jpg" alt="Colorful coral heads in sunlit water" width="640" height="480">
+          <span class="card-top"><span class="card-chip snorkeling">Snorkeling</span></span>
+          <span class="card-text"><strong>Full Day Tour</strong><span>6 hours, 4 stops</span></span>
+        </button></li>
+        <li><button class="card" type="button" data-tour="night-snorkeling" data-where="South Channel" data-time="5pm to 7pm" data-desc="Two hours in total: one hour of prep and one hour in the water. Includes water, underwater lights, snorkeling equipment and the entrance and park fees.">
+          <img src="images/night-snorkeling-sm.jpg" alt="A yellow feather duster worm glowing against a dark reef" width="640" height="480">
+          <span class="card-top"><span class="card-chip snorkeling">Snorkeling</span></span>
+          <span class="card-text"><strong>Night Snorkeling</strong><span>2 hours with lights</span></span>
+        </button></li>
+        <li><button class="card" type="button" data-tour="goffs-caye-snorkeling" data-where="Goff's Caye" data-time="9am to 5pm" data-desc="See manatees, snorkel Goff's Caye, stop for lunch, then enjoy the rest of the day on the island. Includes water, snorkeling equipment, fruit, food and the park fee.">
+          <img src="images/goffs-caye-snorkeling-sm.jpg" alt="A manatee and calf swimming in clear water" width="640" height="480">
+          <span class="card-top"><span class="card-chip snorkeling">Snorkeling</span></span>
+          <span class="card-text"><strong>Full Day Goff's Caye</strong><span>Manatees, snorkel, lunch</span></span>
+        </button></li>
+        <li><button class="card" type="button" data-tour="half-day-spearfishing" data-where="Caye Caulker" data-time="4 hours, 9am to 1pm" data-desc="Catch lobster, conch and fish across three stops: the company's lobster traps, a shallow reef for conch and a recreational zone for spearfishing. Fresh conch ceviche is included, along with water, fruit, spearfishing and snorkeling equipment and a private vessel. 2 to 6 guests.">
+          <img src="images/half-day-spearfishing-sm.jpg" alt="A spearfisher in a wetsuit at the surface holding a speargun" width="640" height="480">
+          <span class="card-top"><span class="card-chip spearfishing">Spearfishing</span></span>
+          <span class="card-text"><strong>Half Day Spearfishing</strong><span>4 hours, ceviche included</span></span>
+        </button></li>
+        <li><button class="card" type="button" data-tour="full-day-spearfishing" data-where="Caye Caulker" data-time="7 hours, 9am to 4pm" data-desc="Catch lobster, conch and fish across three stops: the company's lobster traps, a shallow reef for conch and a recreational zone for spearfishing. Fresh conch ceviche is included, along with water, fruit, spearfishing and snorkeling equipment and a private vessel. 2 to 6 guests.">
+          <img src="images/full-day-spearfishing-sm.jpg" alt="A spear aimed at a school of fish in blue water" width="640" height="480">
+          <span class="card-top"><span class="card-chip spearfishing">Spearfishing</span></span>
+          <span class="card-text"><strong>Full Day Spearfishing</strong><span>7 hours, ceviche included</span></span>
+        </button></li>
+        <li><button class="card" type="button" data-tour="secret-beach" data-where="Secret Beach" data-time="9am to 5pm" data-desc="A shaded boat with a big canopy that seats 14, with dry compartments for your things. Includes rum punch and seasonal ceviche (conch, lobster or shrimp, your pick when in season). Pickup and drop off from Belize or San Pedro, day or night, for a small fee.">
+          <img src="images/secret-beach-sm.jpg" alt="Palm trees leaning over a sandy beach" width="640" height="480">
+          <span class="card-top"><span class="card-chip charter">Charter</span></span>
+          <span class="card-text"><strong>Secret Beach Charter</strong><span>Seats 14, rum punch</span></span>
+        </button></li>
+        <li><button class="card" type="button" data-tour="goffs-caye-charter" data-where="Goff's Caye" data-time="9am to 5pm" data-desc="A shaded boat with a big canopy that seats 14, with dry compartments for your things. Lobster, chicken, fish and vegetarian food options. Includes rum punch and seasonal ceviche (conch, lobster or shrimp, your pick when in season). Pickup and drop off from Belize or San Pedro, day or night, for a small fee.">
+          <img src="images/goffs-caye-charter-sm.jpg" alt="A tiny green island ringed by turquoise water" width="640" height="480">
+          <span class="card-top"><span class="card-chip charter">Charter</span></span>
+          <span class="card-text"><strong>Goff's Caye Charter</strong><span>Seats 14, food options</span></span>
+        </button></li>
+        <li><button class="card" type="button" data-tour="miami-beach" data-where="Miami Beach" data-time="9am to 5pm" data-desc="A shaded boat with a big canopy that seats 14, with dry compartments for your things. Lobster, chicken, fish and vegetarian food options. Includes rum punch and seasonal ceviche (conch, lobster or shrimp, your pick when in season). Pickup and drop off from Belize or San Pedro, day or night, for a small fee.">
+          <img src="images/miami-beach-sm.jpg" alt="A boat and old wooden dock on a white sand beach" width="640" height="480">
+          <span class="card-top"><span class="card-chip charter">Charter</span></span>
+          <span class="card-text"><strong>Miami Beach Charter</strong><span>Seats 14, food options</span></span>
+        </button></li>
+      </ul>
     </div>
-  </div>
+  </section>
 
-  <div class="strip">
-    <ul class="cards">
-      <li><button class="card" type="button" aria-current="true" data-tour="half-day-tour" data-where="Caye Caulker Marine Reserve" data-time="3 hours" data-desc="Three snorkel sites: Coral Garden, Shark and Stingray Alley and South Channel, plus tarpon and magnificent frigatebird feeding. Includes water, fruit, snorkeling equipment and the park fee.">
-        <img src="images/half-day-tour-sm.jpg" alt="A snorkeler in a life vest above a school of small fish" width="640" height="480">
-        <span class="card-top"><span class="card-chip snorkeling">Snorkeling</span></span>
-        <span class="card-text"><strong>Half Day Tour</strong><span>3 hours, 3 snorkel sites</span></span>
-      </button></li>
-      <li><button class="card" type="button" data-tour="full-day-tour" data-where="Hol Chan Marine Reserve" data-time="6 hours" data-desc="Four stops: Coral Garden, Shark and Ray Alley, Hol Chan (main) and the Sunken Barge. Bonus tarpon and magnificent frigatebird feeding. Includes food, water, fruit, snorkeling equipment and the park fee.">
-        <img src="images/full-day-tour-sm.jpg" alt="Colorful coral heads in sunlit water" width="640" height="480">
-        <span class="card-top"><span class="card-chip snorkeling">Snorkeling</span></span>
-        <span class="card-text"><strong>Full Day Tour</strong><span>6 hours, 4 stops</span></span>
-      </button></li>
-      <li><button class="card" type="button" data-tour="night-snorkeling" data-where="South Channel" data-time="5pm to 7pm" data-desc="Two hours in total: one hour of prep and one hour in the water. Includes water, underwater lights, snorkeling equipment and the entrance and park fees.">
-        <img src="images/night-snorkeling-sm.jpg" alt="A yellow feather duster worm glowing against a dark reef" width="640" height="480">
-        <span class="card-top"><span class="card-chip snorkeling">Snorkeling</span></span>
-        <span class="card-text"><strong>Night Snorkeling</strong><span>2 hours with lights</span></span>
-      </button></li>
-      <li><button class="card" type="button" data-tour="goffs-caye-snorkeling" data-where="Goff's Caye" data-time="9am to 5pm" data-desc="See manatees, snorkel Goff's Caye, stop for lunch, then enjoy the rest of the day on the island. Includes water, snorkeling equipment, fruit, food and the park fee.">
-        <img src="images/goffs-caye-snorkeling-sm.jpg" alt="A manatee and calf swimming in clear water" width="640" height="480">
-        <span class="card-top"><span class="card-chip snorkeling">Snorkeling</span></span>
-        <span class="card-text"><strong>Full Day Goff's Caye</strong><span>Manatees, snorkel, lunch</span></span>
-      </button></li>
-      <li><button class="card" type="button" data-tour="half-day-spearfishing" data-where="Caye Caulker" data-time="4 hours, 9am to 1pm" data-desc="Catch lobster, conch and fish across three stops: the company's lobster traps, a shallow reef for conch and a recreational zone for spearfishing. Fresh conch ceviche is included, along with water, fruit, spearfishing and snorkeling equipment and a private vessel. 2 to 6 guests.">
-        <img src="images/half-day-spearfishing-sm.jpg" alt="A spearfisher in a wetsuit at the surface holding a speargun" width="640" height="480">
-        <span class="card-top"><span class="card-chip spearfishing">Spearfishing</span></span>
-        <span class="card-text"><strong>Half Day Spearfishing</strong><span>4 hours, ceviche included</span></span>
-      </button></li>
-      <li><button class="card" type="button" data-tour="full-day-spearfishing" data-where="Caye Caulker" data-time="7 hours, 9am to 4pm" data-desc="Catch lobster, conch and fish across three stops: the company's lobster traps, a shallow reef for conch and a recreational zone for spearfishing. Fresh conch ceviche is included, along with water, fruit, spearfishing and snorkeling equipment and a private vessel. 2 to 6 guests.">
-        <img src="images/full-day-spearfishing-sm.jpg" alt="A spear aimed at a school of fish in blue water" width="640" height="480">
-        <span class="card-top"><span class="card-chip spearfishing">Spearfishing</span></span>
-        <span class="card-text"><strong>Full Day Spearfishing</strong><span>7 hours, ceviche included</span></span>
-      </button></li>
-      <li><button class="card" type="button" data-tour="secret-beach" data-where="Secret Beach" data-time="9am to 5pm" data-desc="A shaded boat with a big canopy that seats 14, with dry compartments for your things. Includes rum punch and seasonal ceviche (conch, lobster or shrimp, your pick when in season). Pickup and drop off from Belize or San Pedro, day or night, for a small fee.">
-        <img src="images/secret-beach-sm.jpg" alt="Palm trees leaning over a sandy beach" width="640" height="480">
-        <span class="card-top"><span class="card-chip charter">Charter</span></span>
-        <span class="card-text"><strong>Secret Beach Charter</strong><span>Seats 14, rum punch</span></span>
-      </button></li>
-      <li><button class="card" type="button" data-tour="goffs-caye-charter" data-where="Goff's Caye" data-time="9am to 5pm" data-desc="A shaded boat with a big canopy that seats 14, with dry compartments for your things. Lobster, chicken, fish and vegetarian food options. Includes rum punch and seasonal ceviche (conch, lobster or shrimp, your pick when in season). Pickup and drop off from Belize or San Pedro, day or night, for a small fee.">
-        <img src="images/goffs-caye-charter-sm.jpg" alt="A tiny green island ringed by turquoise water" width="640" height="480">
-        <span class="card-top"><span class="card-chip charter">Charter</span></span>
-        <span class="card-text"><strong>Goff's Caye Charter</strong><span>Seats 14, food options</span></span>
-      </button></li>
-      <li><button class="card" type="button" data-tour="miami-beach" data-where="Miami Beach" data-time="9am to 5pm" data-desc="A shaded boat with a big canopy that seats 14, with dry compartments for your things. Lobster, chicken, fish and vegetarian food options. Includes rum punch and seasonal ceviche (conch, lobster or shrimp, your pick when in season). Pickup and drop off from Belize or San Pedro, day or night, for a small fee.">
-        <img src="images/miami-beach-sm.jpg" alt="A boat and old wooden dock on a white sand beach" width="640" height="480">
-        <span class="card-top"><span class="card-chip charter">Charter</span></span>
-        <span class="card-text"><strong>Miami Beach Charter</strong><span>Seats 14, food options</span></span>
-      </button></li>
+  <section class="why">
+    <div class="why-text">
+      <h2>Why snorkel with us</h2>
+      <p>Everything you need for a day on the reef comes with the trip, and every trip stays small.</p>
+      <ul class="stats">
+        <li><strong>2</strong>Father and son run Reef Snorkeling Tours</li>
+        <li><strong>3</strong>Snorkel sites on the half day tour</li>
+        <li><strong>4</strong>Snorkeling tours to choose from</li>
+        <li><strong>6</strong>Hours at Hol Chan Marine Reserve with 4 stops</li>
+      </ul>
+    </div>
+    <ul class="benefits">
+      <li>Gear included</li>
+      <li><span><svg class="icon line"><use href="#i-gift"/></svg>Free</span> water</li>
+      <li><span><svg class="icon line"><use href="#i-gift"/></svg>Free</span> fruits</li>
+      <li><span><svg class="icon line"><use href="#i-gift"/></svg>Free</span> food</li>
+      <li>Park fee included</li>
+      <li>Comfortable boat</li>
+      <li>Small groups</li>
+      <li>Professional guides</li>
+      <li>Tarpon and frigatebird feeding</li>
+      <li>Night snorkeling with lights</li>
     </ul>
-  </div>
+  </section>
+
+  <section class="places" id="destinations">
+    <h2>Destinations</h2>
+    <p>Eight places we take guests, from marine reserves to island beaches.</p>
+    <ul class="spots">
+      <li>
+        <img src="images/spot-caye-caulker-sm.jpg" srcset="images/spot-caye-caulker-sm.jpg 640w, images/spot-caye-caulker.jpg 1280w" sizes="(min-width: 90rem) 25vw, (min-width: 50.01rem) 50vw, 100vw" alt="Aerial view of Caye Caulker and the turquoise channel through the reef" width="640" height="480" loading="lazy">
+        <span class="tags"><span class="card-chip snorkeling">Snorkeling</span></span>
+        <h3>Caye Caulker Marine Reserve</h3>
+        <p>Three snorkel sites on the half day tour.</p>
+      </li>
+      <li>
+        <img src="images/spot-hol-chan-sm.jpg" srcset="images/spot-hol-chan-sm.jpg 640w, images/spot-hol-chan.jpg 960w" sizes="(min-width: 90rem) 25vw, (min-width: 50.01rem) 50vw, 100vw" alt="Nurse sharks swimming in clear shallow water at Hol Chan" width="640" height="480" loading="lazy">
+        <span class="tags"><span class="card-chip snorkeling">Snorkeling</span></span>
+        <h3>Hol Chan Marine Reserve</h3>
+        <p>The main stop on the full day tour, with the Sunken Barge.</p>
+      </li>
+      <li>
+        <img src="images/spot-shark-ray-alley-sm.jpg" srcset="images/spot-shark-ray-alley-sm.jpg 640w, images/spot-shark-ray-alley.jpg 1280w" sizes="(min-width: 90rem) 25vw, (min-width: 50.01rem) 50vw, 100vw" alt="A southern stingray gliding over seagrass at Shark Ray Alley" width="640" height="480" loading="lazy">
+        <span class="tags"><span class="card-chip snorkeling">Snorkeling</span></span>
+        <h3>Shark Ray Alley</h3>
+        <p>Snorkel alongside sharks and stingrays on both snorkel tours.</p>
+      </li>
+      <li>
+        <img src="images/full-day-tour-sm.jpg" srcset="images/full-day-tour-sm.jpg 640w, images/full-day-tour.jpg 1800w" sizes="(min-width: 90rem) 25vw, (min-width: 50.01rem) 50vw, 100vw" alt="Colorful coral heads in sunlit water" width="640" height="480" loading="lazy">
+        <span class="tags"><span class="card-chip snorkeling">Snorkeling</span></span>
+        <h3>Coral Garden</h3>
+        <p>A coral reef stop on the half day and full day tours.</p>
+      </li>
+      <li>
+        <img src="images/night-snorkeling-sm.jpg" srcset="images/night-snorkeling-sm.jpg 640w, images/night-snorkeling.jpg 1800w" sizes="(min-width: 90rem) 25vw, (min-width: 50.01rem) 50vw, 100vw" alt="A yellow feather duster worm glowing against a dark reef" width="640" height="480" loading="lazy">
+        <span class="tags"><span class="card-chip snorkeling">Snorkeling</span></span>
+        <h3>South Channel</h3>
+        <p>Night snorkeling with underwater lights.</p>
+      </li>
+      <li>
+        <img src="images/spot-goffs-caye-sm.jpg" srcset="images/spot-goffs-caye-sm.jpg 640w, images/spot-goffs-caye.jpg 1280w" sizes="(min-width: 90rem) 25vw, (min-width: 50.01rem) 50vw, 100vw" alt="A white sand beach with palm trees and thatched shelters on Goff's Caye" width="640" height="480" loading="lazy">
+        <span class="tags"><span class="card-chip snorkeling">Snorkeling</span><span class="card-chip charter">Charter</span></span>
+        <h3>Goff's Caye</h3>
+        <p>See manatees, snorkel and spend the day on the island.</p>
+      </li>
+      <li>
+        <img src="images/spot-secret-beach-sm.jpg" srcset="images/spot-secret-beach-sm.jpg 640w, images/spot-secret-beach.jpg 1280w" sizes="(min-width: 90rem) 25vw, (min-width: 50.01rem) 50vw, 100vw" alt="The Secret Beach sign on a white sand beach with palm trees" width="640" height="480" loading="lazy">
+        <span class="tags"><span class="card-chip charter">Charter</span></span>
+        <h3>Secret Beach</h3>
+        <p>Shaded boat, rum punch and seasonal ceviche.</p>
+      </li>
+      <li>
+        <img src="images/miami-beach-sm.jpg" srcset="images/miami-beach-sm.jpg 640w, images/miami-beach.jpg 1800w" sizes="(min-width: 90rem) 25vw, (min-width: 50.01rem) 50vw, 100vw" alt="A boat and old wooden dock on a white sand beach" width="640" height="480" loading="lazy">
+        <span class="tags"><span class="card-chip charter">Charter</span></span>
+        <h3>Miami Beach</h3>
+        <p>Shaded boat with lobster, chicken, fish or vegetarian food.</p>
+      </li>
+    </ul>
+  </section>
+
+  <section class="also" id="tours">
+    <h2>We also offer</h2>
+    <p>Every trip is on a private boat. Fishing and spearfishing take 2 to 6 guests, and charters seat 14 with pickup from Belize or San Pedro.</p>
+    <ul class="offers">
+      <li id="fishing">
+        <img src="images/fishing.jpg" alt="A fisherman casting a line from the rocks at sunrise" width="840" height="1120" loading="lazy">
+        <h3>Fishing</h3>
+        <p class="meta"><span><svg class="icon line"><use href="#i-clock"/></svg>4 to 7 hrs</span><span><svg class="icon line"><use href="#i-people"/></svg>2 to 6 guests</span></p>
+        <p>Drop fishing inside the reef for snapper. Swings cooks your catch for free.</p>
+        <ul class="includes">
+        <li>Water</li>
+        <li>Fruits</li>
+        <li>Fishing gear</li>
+        <li>Catch cooked free</li>
+        </ul>
+        <a class="btn btn-light" href="contact.html?tour=fishing">Book Now</a>
+      </li>
+      <li>
+        <img src="images/half-day-spearfishing.jpg" alt="A spearfisher in a wetsuit at the surface holding a speargun" width="1800" height="1100" loading="lazy">
+        <h3>Spearfishing</h3>
+        <p class="meta"><span><svg class="icon line"><use href="#i-clock"/></svg>4 to 7 hrs</span><span><svg class="icon line"><use href="#i-people"/></svg>2 to 6 guests</span></p>
+        <p>Lobster, conch and fish across three stops. Fresh conch ceviche is included.</p>
+        <ul class="includes">
+        <li>Water</li>
+        <li>Fruits</li>
+        <li>Full gear</li>
+        <li>Conch ceviche</li>
+        </ul>
+        <a class="btn btn-light" href="contact.html?tour=spearfishing">Book Now</a>
+      </li>
+      <li id="chartered-trips">
+        <img src="images/chartered-trips.jpg" alt="A shaded boat in shallow turquoise water off a white sand beach" width="840" height="1120" loading="lazy">
+        <h3>Chartered Trips</h3>
+        <p class="meta"><span><svg class="icon line"><use href="#i-clock"/></svg>9am to 5pm</span><span><svg class="icon line"><use href="#i-people"/></svg>Seats 14</span></p>
+        <p>Secret Beach, Goff's Caye or Miami Beach by shaded boat. Pickup from Belize or San Pedro.</p>
+        <ul class="includes">
+        <li>Rum punch</li>
+        <li>Seasonal ceviche</li>
+        <li>Food</li>
+        <li>Dry storage</li>
+        </ul>
+        <a class="btn btn-light" href="contact.html?tour=chartered-trips">Book Now</a>
+      </li>
+    </ul>
+  </section>
 </main>
 
 <dialog class="lightbox">
@@ -111,5 +251,6 @@
 
 <script src="menu.js"></script>
 <script src="script.js"></script>
+<script type="module" src="benefits.js"></script>
 </body>
 </html>
