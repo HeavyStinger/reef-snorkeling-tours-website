@@ -46,3 +46,18 @@ menu.addEventListener("click", function (event) {
 document.addEventListener("keydown", function (event) {
   if (event.key === "Escape") setMenu(false);
 });
+
+const header = document.querySelector(".site-header");
+
+function sizeHeader() {
+  document.documentElement.style.setProperty("--nav-h", header.offsetHeight + "px");
+}
+
+function tintHeader() {
+  header.classList.toggle("scrolled", window.scrollY > 8);
+}
+
+new ResizeObserver(sizeHeader).observe(header);
+window.addEventListener("scroll", tintHeader, { passive: true });
+sizeHeader();
+tintHeader();

@@ -58,8 +58,13 @@ function restart() {
 }
 
 function openLightbox(card) {
-  lightbox.querySelector("img").src = "images/" + card.dataset.tour + ".jpg";
-  lightbox.querySelector("img").alt = card.querySelector("img").alt;
+  const photo = lightbox.querySelector("img");
+  const src = "images/" + card.dataset.tour + ".jpg";
+  if (!photo.src.endsWith(src)) {
+    photo.classList.add("is-loading");
+    photo.src = src;
+  }
+  photo.alt = card.querySelector("img").alt;
   lightbox.querySelector(".where").textContent = card.dataset.where + " · " + card.dataset.time;
   lightbox.querySelector("h2").textContent = card.querySelector("strong").textContent;
   lightbox.querySelector(".lightbox-desc").textContent = card.dataset.desc;
