@@ -11,6 +11,24 @@
     </image:image>
   </url>
   <url>
+    <loc>https://reefsnorkelingtours.com/snorkeling.html</loc>
+    <lastmod>2026-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://reefsnorkelingtours.com/fishing.html</loc>
+    <lastmod>2026-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://reefsnorkelingtours.com/chartered-trips.html</loc>
+    <lastmod>2026-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://reefsnorkelingtours.com/contact.html</loc>
     <lastmod>2026-11-06</lastmod>
     <changefreq>yearly</changefreq>

@@ -74,6 +74,10 @@ function openLightbox(card) {
 cards.addEventListener("click", function (event) {
   const card = event.target.closest(".card");
   if (!card) return;
+  if (card.dataset.href) {
+    window.location.href = card.dataset.href;
+    return;
+  }
   select(items.indexOf(card));
   openLightbox(card);
   restart();
