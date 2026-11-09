@@ -8,7 +8,6 @@ function setMenu(open) {
 }
 
 function splash() {
-  menu.classList.add("hit");
   for (let i = 0; i < 18; i++) {
     const bubble = document.createElement("span");
     bubble.className = "bubble";
@@ -35,10 +34,6 @@ menu.addEventListener("transitionend", function (event) {
   }
 });
 
-menu.addEventListener("animationend", function (event) {
-  if (event.target === menu) menu.classList.remove("hit");
-});
-
 menu.addEventListener("click", function (event) {
   if (event.target.closest("a")) setMenu(false);
 });
@@ -46,6 +41,18 @@ menu.addEventListener("click", function (event) {
 document.addEventListener("keydown", function (event) {
   if (event.key === "Escape") setMenu(false);
 });
+
+const hero = document.querySelector(".hero");
+let heroWidth = 0;
+
+function sizeHero() {
+  if (!hero || window.innerWidth === heroWidth) return;
+  heroWidth = window.innerWidth;
+  document.documentElement.style.setProperty("--hero-h", window.innerHeight + "px");
+}
+
+window.addEventListener("resize", sizeHero);
+sizeHero();
 
 const header = document.querySelector(".site-header");
 
