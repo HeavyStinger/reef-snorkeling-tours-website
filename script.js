@@ -57,6 +57,56 @@ function restart() {
   }
 }
 
+let touched = false;
+let settle;
+
+function nearest() {
+  const middle = cards.scrollLeft + cards.clientWidth / 2;
+  let best = current;
+  let gap = Infinity;
+  items.forEach(function (card, index) {
+    const slide = card.parentElement;
+    const distance = Math.abs(slide.offsetLeft + slide.offsetWidth / 2 - middle);
+    if (distance < gap) {
+      gap = distance;
+      best = index;
+    }
+  });
+  return best;
+}
+
+function finish() {
+  touched = false;
+  const index = nearest();
+  if (index !== current) {
+    items[current].removeAttribute("aria-current");
+    items[index].setAttribute("aria-current", "true");
+    current = index;
+  }
+  restart();
+}
+
+function interact() {
+  touched = true;
+  clearInterval(timer);
+  clearTimeout(settle);
+  settle = setTimeout(finish, 600);
+}
+
+["pointerdown", "touchstart", "wheel", "keydown"].forEach(function (name) {
+  cards.addEventListener(name, interact, { passive: true });
+});
+
+cards.addEventListener(
+  "scroll",
+  function () {
+    if (!touched) return;
+    clearTimeout(settle);
+    settle = setTimeout(finish, 150);
+  },
+  { passive: true }
+);
+
 function openLightbox(card) {
   const photo = lightbox.querySelector("img");
   const src = "images/" + card.dataset.tour + ".jpg";
