@@ -1008,7 +1008,6 @@ h1 {
   padding: 1.25rem;
   overflow: hidden;
   border-radius: 0.8rem;
-  background: linear-gradient(160deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.03));
   color-scheme: dark;
   isolation: isolate;
 }
