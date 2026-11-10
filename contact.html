@@ -111,7 +111,7 @@
   }
   </script>
 </head>
-<body>
+<body class="stick-foot">
 
 <div class="page">
   <header class="site-header">
@@ -132,29 +132,174 @@
     </div>
   </header>
 
+  <div class="contact-marq" aria-hidden="true">
+    <div class="marq out"><span>LET'S TALK &bull; LET'S TALK &bull; LET'S TALK &bull; LET'S TALK &bull; LET'S TALK &bull; LET'S TALK &bull;&nbsp;</span></div>
+    <div class="marq fill"><span>BOOK A TOUR &bull; ASK US ANYTHING &bull; BOOK A TOUR &bull; ASK US ANYTHING &bull; BOOK A TOUR &bull; ASK US ANYTHING &bull; BOOK A TOUR &bull; ASK US ANYTHING &bull;&nbsp;</span></div>
+  </div>
+
   <main class="contact">
-    <div>
+    <div class="contact-head">
       <h1>Contact us</h1>
-      <p class="contact-intro">Ask about a trip, a date or a group. We reply by email.</p>
-      <address>
-        <a href="mailto:bookings@example.com">bookings@example.com</a><br>
-        <a href="tel:+501609353">+501 609353</a><br>
-        Caye Caulker, Belize
-      </address>
+      <p class="contact-intro">Book a tour or ask us anything. We reply by email.</p>
     </div>
 
-    <form action="mailto:bookings@example.com" method="post" enctype="text/plain">
-      <label>Name
-        <input type="text" name="name" autocomplete="name" required>
-      </label>
-      <label>Email
-        <input type="email" name="email" autocomplete="email" required>
-      </label>
-      <label>Your question
-        <textarea name="message" rows="6" required></textarea>
-      </label>
-      <button class="btn btn-light" type="submit">Send</button>
-    </form>
+    <div class="stepper" data-stepper>
+      <div class="stepper-top" data-top>
+        <div class="segs" data-dots aria-hidden="true"></div>
+        <p class="stepper-count" aria-live="polite">Step <b data-now>1</b> of 4</p>
+      </div>
+
+      <noscript><p class="alert">The booking form needs JavaScript. Email us at <a href="mailto:bookings@example.com">bookings@example.com</a> instead.</p></noscript>
+
+      <form id="contact-form" novalidate>
+        <section class="step" data-step="1" aria-labelledby="h-1">
+          <h2 id="h-1" tabindex="-1">What can we help with?</h2>
+          <p class="hint">Pick one to get started.</p>
+          <div class="reasons" role="radiogroup" aria-labelledby="h-1">
+            <label class="choice reason book">
+              <input type="radio" name="reason" value="booking">
+              <span class="face">
+                <span class="flag">Most popular</span>
+                <span class="ico-row" aria-hidden="true">
+                  <i><b class="logo-mask"></b></i>
+                  <i><svg class="ico-fish" viewBox="0 0 80 50"><path d="M72 26C66 14 46 10 28 24L8 12C12 20 12 32 8 40L28 28C46 42 66 38 72 26Z"/><path d="M42 13L50 4C56 4 58 9 58 15"/><path d="M44 37L50 46C56 46 58 42 58 37"/><path d="M60 17C54 22 54 30 60 35"/><path d="M65 20C61 24 61 29 65 33"/><circle cx="66" cy="23" r="1.6" fill="currentColor"/></svg></i>
+                  <i><svg viewBox="0 0 24 24"><path d="M4 20L18.5 5.5"/><path d="M20 4l-7 .8 6.2 6.2z"/><path d="M8.5 15.5l-3.5-.5M8.5 15.5l.5 3.5"/></svg></i>
+                  <i><svg viewBox="0 0 24 24"><path d="M3 16h18l-2.6 4.5H5.6z"/><path d="M12 16V4l6 9h-6M12 8L7 14h5"/></svg></i>
+                </span>
+                <strong>Book a tour</strong>
+                <span>Snorkeling, fishing, spearfishing or a charter. Tell us the trip and we set it up.</span>
+              </span>
+              <span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+            </label>
+            <label class="choice reason ask">
+              <input type="radio" name="reason" value="inquiry">
+              <span class="face">
+                <svg class="big-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 10h8M8 13h5"/></svg>
+                <strong>General inquiry</strong>
+                <span>Questions about dates, groups or anything else.</span>
+              </span>
+              <span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>
+            </label>
+          </div>
+          <p class="group-error" role="alert" hidden>Please choose one to continue.</p>
+          <div class="actions">
+            <button class="btn btn-light go" type="button" data-next aria-disabled="true">Continue</button>
+          </div>
+        </section>
+
+        <section class="step" data-step="2" aria-labelledby="h-2" hidden>
+          <h2 id="h-2" tabindex="-1">What are you interested in?</h2>
+          <p class="hint">Choose a category.</p>
+          <div class="cats" role="radiogroup" aria-labelledby="h-2" data-render="cats"></div>
+          <p class="group-error" role="alert" hidden>Please choose a category to continue.</p>
+          <div class="actions">
+            <button class="btn btn-ghost" type="button" data-back>Back</button>
+            <button class="btn btn-light go" type="button" data-next aria-disabled="true">Continue</button>
+          </div>
+        </section>
+
+        <section class="step" data-step="3" aria-labelledby="h-3" hidden>
+          <h2 id="h-3" tabindex="-1" data-title3>Which one?</h2>
+          <p class="hint" data-hint3></p>
+          <div class="tr"><div class="tr-list" role="radiogroup" aria-labelledby="h-3" data-list></div><div class="tr-panel" data-panel></div></div>
+          <p class="group-error" role="alert" hidden>Please choose one to continue.</p>
+          <div class="actions">
+            <button class="btn btn-ghost" type="button" data-back>Back</button>
+            <button class="btn btn-light go" type="button" data-next aria-disabled="true">Continue</button>
+          </div>
+        </section>
+
+        <section class="step" data-step="4" aria-labelledby="h-4" hidden>
+          <h2 id="h-4" tabindex="-1" data-title4>Your details</h2>
+          <ul class="recap" data-recap aria-label="Your choices"></ul>
+
+          <div class="field" data-field="name">
+            <label for="f-name">Name</label>
+            <div class="control">
+              <input id="f-name" name="name" type="text" autocomplete="name" required aria-describedby="e-name" maxlength="80">
+              <span class="status" aria-hidden="true"><svg class="ok" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><svg class="bad" viewBox="0 0 24 24"><path d="M12 7v6M12 17h.01"/></svg></span>
+            </div>
+            <p class="error" id="e-name" hidden></p>
+          </div>
+
+          <div class="field" data-field="email">
+            <label for="f-email">Email</label>
+            <div class="control">
+              <input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" required aria-describedby="e-email" maxlength="120">
+              <span class="status" aria-hidden="true"><svg class="ok" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><svg class="bad" viewBox="0 0 24 24"><path d="M12 7v6M12 17h.01"/></svg></span>
+            </div>
+            <p class="error" id="e-email" hidden></p>
+          </div>
+
+          <div class="field" data-field="phone">
+            <label for="f-phone">Phone number</label>
+            <div class="control phone">
+              <div class="cc">
+                <span class="cc-code" data-cc-code>+501</span>
+                <svg class="cc-chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+                <select id="f-cc" name="country" aria-label="Country code" data-cc></select>
+              </div>
+              <input id="f-phone" name="phone" type="tel" autocomplete="tel-national" inputmode="tel" required aria-describedby="e-phone" maxlength="20">
+              <span class="status" aria-hidden="true"><svg class="ok" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><svg class="bad" viewBox="0 0 24 24"><path d="M12 7v6M12 17h.01"/></svg></span>
+            </div>
+            <p class="error" id="e-phone" hidden></p>
+          </div>
+
+          <div class="field" data-field="message">
+            <label for="f-message">Message</label>
+            <div class="control">
+              <textarea id="f-message" name="message" rows="5" required aria-describedby="e-message c-message" maxlength="1000"></textarea>
+              <span class="status" aria-hidden="true"><svg class="ok" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><svg class="bad" viewBox="0 0 24 24"><path d="M12 7v6M12 17h.01"/></svg></span>
+            </div>
+            <p class="error" id="e-message" hidden></p>
+            <p class="count" id="c-message"><span data-count>0</span> / 1000</p>
+          </div>
+
+          <input class="hp" type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+          <div class="alert" role="alert" data-alert hidden>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7v6M12 17h.01"/><circle cx="12" cy="12" r="9"/></svg>
+            <p data-alert-text></p>
+          </div>
+
+          <div class="actions">
+            <button class="btn btn-ghost" type="button" data-back>Back</button>
+            <button class="btn btn-light send" type="submit">
+              <span class="label" data-send-label>Send booking request</span>
+              <span class="spin" aria-hidden="true"></span>
+            </button>
+          </div>
+        </section>
+
+        <section class="step done" data-step="5" aria-labelledby="h-5" hidden>
+          <div class="seal" aria-hidden="true">
+            <svg viewBox="0 0 52 52"><circle cx="26" cy="26" r="23"/><path d="M15 27l8 8 14-16"/></svg>
+            <span class="burst" data-burst></span>
+          </div>
+          <h2 id="h-5" tabindex="-1" data-done-title>Thank you!</h2>
+          <p class="done-text" data-done-text></p>
+          <ul class="recap" data-done-recap aria-label="What you sent"></ul>
+          <div class="sail" aria-hidden="true">
+            <svg class="sail-boat" viewBox="0 0 64 40"><path d="M6 28h52l-7 9H13z"/><path d="M32 28V4l16 20H32M32 12L18 26h14"/></svg>
+            <i></i>
+          </div>
+          <div class="actions">
+            <a class="btn btn-light" href="./">Back to home</a>
+            <button class="btn btn-ghost" type="button" data-again>Send another</button>
+          </div>
+        </section>
+      </form>
+    </div>
+
+    <address class="bento" aria-label="Other ways to reach us">
+      <a class="bt bt-email" href="mailto:bookings@example.com"><svg class="icon line" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><span class="bt-text"><small>Email us</small><strong>bookings@example.com</strong></span></a>
+      <a class="bt bt-phone" href="tel:+501609353"><svg class="icon line" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><span class="bt-text"><small>Call us</small><strong>+501 609353</strong></span></a>
+      <a class="bt bt-loc" href="https://www.google.com/maps/search/?api=1&amp;query=Caye+Caulker%2C+Belize" target="_blank" rel="noopener"><svg class="icon line" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span class="bt-text"><small>Find us</small><strong>Caye Caulker, Belize</strong></span></a>
+      <a class="bt bt-soc" href="https://www.facebook.com/reefsnorkelingtour/" target="_blank" rel="noopener"><svg class="icon fill" viewBox="0 0 16 16"><path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/></svg><span class="bt-text"><small>Follow</small><strong>Facebook</strong></span></a>
+      <a class="bt bt-soc" href="#" target="_blank" rel="noopener"><svg class="icon fill" viewBox="0 0 16 16"><path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/></svg><span class="bt-text"><small>Follow</small><strong>Instagram</strong></span></a>
+      <a class="bt bt-soc" href="#" target="_blank" rel="noopener"><svg class="icon fill" viewBox="0 0 16 16"><path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/></svg><span class="bt-text"><small>Chat</small><strong>WhatsApp</strong></span></a>
+      <a class="bt bt-soc" href="#" target="_blank" rel="noopener"><svg class="icon fill" viewBox="0 0 24 24"><path d="M12.006 4.295c-2.67 0-5.338.784-7.645 2.353H0l1.963 2.135a5.997 5.997 0 0 0 4.04 10.43 5.976 5.976 0 0 0 4.075-1.6L12 19.705l1.922-2.09a5.972 5.972 0 0 0 4.072 1.598 6 6 0 0 0 6-5.998 5.982 5.982 0 0 0-1.957-4.432L24 6.648h-4.35a13.573 13.573 0 0 0-7.644-2.353zM12 6.255c1.531 0 3.063.303 4.504.903C13.943 8.138 12 10.43 12 13.1c0-2.671-1.942-4.962-4.504-5.942A11.72 11.72 0 0 1 12 6.256zM6.002 9.157a4.059 4.059 0 1 1 0 8.118 4.059 4.059 0 0 1 0-8.118zm11.992.002a4.057 4.057 0 1 1 .003 8.115 4.057 4.057 0 0 1-.003-8.115zm-11.992 1.93a2.128 2.128 0 0 0 0 4.256 2.128 2.128 0 0 0 0-4.256zm11.992 0a2.128 2.128 0 0 0 0 4.256 2.128 2.128 0 0 0 0-4.256z"/></svg><span class="bt-text"><small>Reviews</small><strong>TripAdvisor</strong></span></a>
+    </address>
   </main>
 </div>
 
@@ -213,5 +358,7 @@
 </footer>
 
 <script src="menu.js"></script>
+<script src="contact.js"></script>
+<script type="module" src="loading.js"></script>
 </body>
 </html>
