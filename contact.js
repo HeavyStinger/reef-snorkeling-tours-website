@@ -37,10 +37,12 @@ const PATHS = {
   van: '<path d="M3 16V8h11v8M14 11h4l3 3v2h-3"/><circle cx="7" cy="17" r="1.8"/><circle cx="17" cy="17" r="1.8"/>',
   check: '<path d="M5 12.5l4.5 4.5L19 7.5"/>',
   info: '<circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/>',
+  tag: '<path d="M3 12V4h8l10 10-8 8z"/><circle cx="7.5" cy="8.5" r="1.3"/>',
   star: '<path d="M12 3l2.7 5.6 6.1.8-4.5 4.2 1.1 6.1L12 16.8l-5.4 2.9 1.1-6.1-4.5-4.2 6.1-.8z"/>',
   help: '<circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.4-1 .9-1 1.7M12 17h.01"/>',
 };
 
+const STAR = "M12 2.8l2.9 6 6.6.9-4.8 4.6 1.2 6.5-5.9-3.2-5.9 3.2 1.2-6.5L2.5 9.7l6.6-.9z";
 const WATER = ["water", "Water"];
 const FRUIT = ["fruit", "Fruits"];
 const FOOD = ["food", "Food"];
@@ -56,23 +58,23 @@ const SWINGS_NOTE = ["food", "Add food and " + SWINGS + " cooks your catch for f
 
 const TRIPS = {
   snorkeling: [
-    { id: "half-day", name: "Half Day Tour", img: "half-day-tour", hours: "3 hours", when: "", size: "", where: "Caye Caulker Marine Reserve", stops: ["Coral Garden", "Shark and Stingray Alley", "South Channel"], incl: [WATER, FRUIT, GEAR, PARK], know: [FEED] },
-    { id: "full-day", name: "Full Day Tour", img: "full-day-tour", hours: "6 hours", when: "", size: "", where: "Hol Chan Marine Reserve", stops: ["Coral Garden", "Shark Ray Alley", "Hol Chan (main)", "Sunken Barge"], incl: [FOOD, WATER, FRUIT, GEAR, PARK], know: [FEED] },
-    { id: "night", name: "Night Snorkeling", img: "night-snorkeling", hours: "2 hours", when: "5pm to 7pm", size: "", where: "South Channel", stops: ["One hour of preparation", "One hour snorkeling with lights"], incl: [WATER, ["bulb", "Underwater lights"], GEAR, ["ticket", "Entrance and park fee"]], know: [] },
-    { id: "goffs-caye", name: "Full Day Goff's Caye", img: "goffs-caye-snorkeling", hours: "8 hours", when: "9am to 5pm", size: "", where: "Goff's Caye", stops: ["Manatee sighting", "Snorkel Goff's Caye", "Lunch", "Enjoy the island"], incl: [WATER, GEAR, FRUIT, FOOD, PARK], know: [] },
+    { id: "half-day", name: "Half Day Tour", price: "$50 per person", short: "$50", terms: "Private trip: 4 to 14 guests. You can also join other guests.", img: "half-day-tour", hours: "3 hours", when: "", size: "", where: "Caye Caulker Marine Reserve", stops: ["Coral Garden", "Shark and Stingray Alley", "South Channel"], incl: [WATER, FRUIT, GEAR, PARK], know: [FEED] },
+    { id: "full-day", name: "Full Day Tour", price: "$100 per person", short: "$100", terms: "Private trip: 4 to 14 guests. You can also join other guests.", img: "full-day-tour", hours: "6 hours", when: "", size: "", where: "Hol Chan Marine Reserve", stops: ["Coral Garden", "Shark Ray Alley", "Hol Chan (main)", "Sunken Barge"], incl: [FOOD, WATER, FRUIT, GEAR, PARK], know: [FEED] },
+    { id: "night", name: "Night Snorkeling", price: "$65 per person", short: "$65", terms: "Private trip: 4 to 14 guests. You can also join other guests.", img: "night-snorkeling", hours: "2 hours", when: "5pm to 7pm", size: "", where: "South Channel", stops: ["One hour of preparation", "One hour snorkeling with lights"], incl: [WATER, ["bulb", "Underwater lights"], GEAR, ["ticket", "Entrance and park fee"]], know: [] },
+    { id: "goffs-caye", name: "Full Day Goff's Caye", price: "$200 per person", short: "$200", terms: "Private trip: 4 to 14 guests. You can also join other guests.", img: "goffs-caye-snorkeling", hours: "8 hours", when: "9am to 5pm", size: "", where: "Goff's Caye", stops: ["Manatee sighting", "Snorkel Goff's Caye", "Lunch", "Enjoy the island"], incl: [WATER, GEAR, FRUIT, FOOD, PARK], know: [] },
   ],
   fishing: [
-    { id: "half-day", name: "Half Day Fishing", img: "fishing", pos: "50% 30%", hours: "4 hours", when: "9am to 1pm", size: "2 to 6 guests", where: "Inside the reef", stops: ["Find where the fish bite", "Drop fishing for snapper"], incl: [WATER, FRUIT, ["fish", "Fishing equipment"], VESSEL], know: [["info", "Drop fishing, not trolling, focused on snapper."], SWINGS_NOTE] },
-    { id: "full-day", name: "Full Day Fishing", img: "fishing", pos: "50% 80%", hours: "7 hours", when: "9am to 4pm", size: "2 to 6 guests", where: "Inside the reef", stops: ["Find where the fish bite", "Drop fishing for snapper"], incl: [WATER, FRUIT, ["fish", "Fishing equipment"], VESSEL], know: [["info", "Drop fishing, not trolling, focused on snapper."], SWINGS_NOTE] },
+    { id: "half-day", name: "Half Day Fishing", price: "$350 for 2 guests", short: "$350 for 2", terms: "Private boat for 2 to 6 guests. Each extra guest is $50.", img: "fishing", pos: "50% 30%", hours: "4 hours", when: "9am to 1pm", size: "2 to 6 guests", where: "Inside the reef", stops: ["Find where the fish bite", "Drop fishing for snapper"], incl: [WATER, FRUIT, ["fish", "Fishing equipment"], VESSEL], know: [["info", "Drop fishing, not trolling, focused on snapper."], SWINGS_NOTE] },
+    { id: "full-day", name: "Full Day Fishing", price: "$500 for 2 guests", short: "$500 for 2", terms: "Private boat for 2 to 6 guests. Each extra guest is $50.", img: "fishing", pos: "50% 80%", hours: "7 hours", when: "9am to 4pm", size: "2 to 6 guests", where: "Inside the reef", stops: ["Find where the fish bite", "Drop fishing for snapper"], incl: [WATER, FRUIT, ["fish", "Fishing equipment"], VESSEL], know: [["info", "Drop fishing, not trolling, focused on snapper."], SWINGS_NOTE] },
   ],
   spearfishing: [
-    { id: "half-day", name: "Half Day Spearfishing", img: "half-day-spearfishing", hours: "4 hours", when: "9am to 1pm", size: "2 to 6 guests", where: "Caye Caulker reef", stops: ["Company lobster traps", "Shallow reef for conch", "Spearfishing zone"], incl: [WATER, FRUIT, ["spear", "Spearfishing equipment"], GEAR, VESSEL, ["food", "Fresh conch ceviche"]], know: [["star", "Catch lobster, conch and fish."]] },
-    { id: "full-day", name: "Full Day Spearfishing", img: "full-day-spearfishing", hours: "7 hours", when: "9am to 4pm", size: "2 to 6 guests", where: "Caye Caulker reef", stops: ["Company lobster traps", "Shallow reef for conch", "Spearfishing zone"], incl: [WATER, FRUIT, ["spear", "Spearfishing equipment"], GEAR, VESSEL, ["food", "Fresh conch ceviche"]], know: [["star", "Catch lobster, conch and fish."]] },
+    { id: "half-day", name: "Half Day Spearfishing", price: "$125 per person", short: "$125", terms: "Private trip: 2 to 6 guests. You can also join other guests.", img: "half-day-spearfishing", hours: "4 hours", when: "9am to 1pm", size: "2 to 6 guests", where: "Caye Caulker reef", stops: ["Company lobster traps", "Shallow reef for conch", "Spearfishing zone"], incl: [WATER, FRUIT, ["spear", "Spearfishing equipment"], GEAR, VESSEL, ["food", "Fresh conch ceviche"]], know: [["star", "Catch lobster, conch and fish."]] },
+    { id: "full-day", name: "Full Day Spearfishing", price: "$150 per person", short: "$150", terms: "Private trip: 2 to 6 guests. You can also join other guests.", img: "full-day-spearfishing", hours: "7 hours", when: "9am to 4pm", size: "2 to 6 guests", where: "Caye Caulker reef", stops: ["Company lobster traps", "Shallow reef for conch", "Spearfishing zone"], incl: [WATER, FRUIT, ["spear", "Spearfishing equipment"], GEAR, VESSEL, ["food", "Fresh conch ceviche"]], know: [["star", "Catch lobster, conch and fish."]] },
   ],
   "chartered-trips": [
-    { id: "secret-beach", name: "Secret Beach", img: "secret-beach", hours: "9am to 5pm", when: "", size: "Seats 14", where: "Secret Beach", stops: ["Board the shaded boat", "Secret Beach", "Rum punch and ceviche"], incl: [["drink", "Rum punch"], ["food", "Seasonal ceviche"], ["shade", "Shaded boat"], ["dry", "Dry storage"]], know: BEACH_NOTES },
-    { id: "goffs-caye", name: "Goff's Caye", img: "goffs-caye-charter", hours: "9am to 5pm", when: "", size: "Seats 14", where: "Goff's Caye", stops: ["Board the shaded boat", "Goff's Caye", "Lunch and rum punch"], incl: [["food", "Lobster, chicken, fish or vegetarian"], ["drink", "Rum punch"], ["food", "Seasonal ceviche"], ["shade", "Shaded boat"], ["dry", "Dry storage"]], know: BEACH_NOTES },
-    { id: "miami-beach", name: "Miami Beach", img: "miami-beach", hours: "9am to 5pm", when: "", size: "Seats 14", where: "Miami Beach", stops: ["Board the shaded boat", "Miami Beach", "Lunch and rum punch"], incl: [["food", "Lobster, chicken, fish or vegetarian"], ["drink", "Rum punch"], ["food", "Seasonal ceviche"], ["shade", "Shaded boat"], ["dry", "Dry storage"]], know: BEACH_NOTES },
+    { id: "secret-beach", name: "Secret Beach", price: "$100 per person", short: "$100", terms: "Private trip: 4 to 14 guests. You can also join other guests.", img: "secret-beach", hours: "9am to 5pm", when: "", size: "Seats 14", where: "Secret Beach", stops: ["Board the shaded boat", "Secret Beach", "Rum punch and ceviche"], incl: [["drink", "Rum punch"], ["food", "Seasonal ceviche"], ["shade", "Shaded boat"], ["dry", "Dry storage"]], know: BEACH_NOTES },
+    { id: "goffs-caye", name: "Goff's Caye", price: "$200 per person", short: "$200", terms: "Private trip: 2 to 14 guests. You can also join other guests.", img: "goffs-caye-charter", hours: "9am to 5pm", when: "", size: "Seats 14", where: "Goff's Caye", stops: ["Board the shaded boat", "Goff's Caye", "Lunch and rum punch"], incl: [["food", "Lobster, chicken, fish or vegetarian"], ["drink", "Rum punch"], ["food", "Seasonal ceviche"], ["shade", "Shaded boat"], ["dry", "Dry storage"]], know: BEACH_NOTES },
+    { id: "miami-beach", name: "Miami Beach", price: "$100 per person", short: "$100", terms: "Private trip: 4 to 14 guests. You can also join other guests.", img: "miami-beach", hours: "9am to 5pm", when: "", size: "Seats 14", where: "Miami Beach", stops: ["Board the shaded boat", "Miami Beach", "Lunch and rum punch"], incl: [["food", "Lobster, chicken, fish or vegetarian"], ["drink", "Rum punch"], ["food", "Seasonal ceviche"], ["shade", "Shaded boat"], ["dry", "Dry storage"]], know: BEACH_NOTES },
   ],
 };
 
@@ -214,7 +216,8 @@ function tripMeta(item) {
   return (
     '<p class="tr-meta"><span>' + icon("clock") + item.hours + (item.when ? ", " + item.when : "") + "</span>" +
     (item.size ? "<span>" + icon("people") + item.size + "</span>" : "") +
-    "<span>" + icon("pin") + item.where + "</span></p>"
+    "<span>" + icon("pin") + item.where + "</span>" +
+    '<span class="tr-pricetag">' + icon("tag") + "<b>" + item.price + "</b></span></p>"
   );
 }
 
@@ -225,8 +228,9 @@ function tripDetails(item) {
   const included = item.incl.map(function (entry) {
     return "<li>" + icon(entry[0]) + "<span>" + entry[1] + "</span></li>";
   }).join("");
-  const know = item.know.length
-    ? '<div><h4>Good to know</h4><ul class="tr-know">' + item.know.map(function (entry) {
+  const notes = [["tag", "<b>" + item.price + "</b>. " + item.terms]].concat(item.know);
+  const know = notes.length
+    ? '<div><h4>Price and good to know</h4><ul class="tr-know">' + notes.map(function (entry) {
         return "<li>" + icon(entry[0]) + "<span>" + entry[1] + "</span></li>";
       }).join("") + "</ul></div>"
     : "";
@@ -362,6 +366,11 @@ function startTrail() {
 
 let viewed = null;
 
+function trust() {
+  const star = '<svg class="tr-star" viewBox="0 0 24 24"><path d="' + STAR + '"/></svg>';
+  return '<p class="tr-trust"><span class="tr-stars" role="img" aria-label="5 out of 5 stars">' + star.repeat(5) + "</span><span>Rated by real customers</span></p>";
+}
+
 function paintPanel(animate) {
   const list = TRIPS[state.category] || [];
   const panelBox = $("[data-panel]");
@@ -371,10 +380,10 @@ function paintPanel(animate) {
     const chosen = state.trip === item.id;
     panelBox.innerHTML =
       tripPhoto(item, true).replace("<img ", '<img class="tr-bg" ') + '<div class="tr-hero"><h3>' + item.name + "</h3>" + tripMeta(item) + '</div><div class="tr-body">' +
-      tripDetails(item) + '<button type="button" class="btn btn-light" data-confirm>' + (chosen ? "Continue with this trip" : booking ? "Choose this trip" : "Choose this one") + "</button></div>";
+      tripDetails(item) + trust() + '<button type="button" class="btn btn-light" data-confirm>' + (chosen ? "Continue with this trip" : booking ? "Choose this trip" : "Choose this one") + "</button></div>";
   } else {
     panelBox.innerHTML =
-      '<div class="tr-body"><div class="tr-full"><h4>Not sure yet</h4><p class="tr-sure">' + NOT_SURE.sub + ' Pick this and tell us more in the next step.</p></div><button type="button" class="btn btn-light" data-confirm>' + (state.trip === NOT_SURE.id ? "Continue" : "Choose this") + "</button></div>";
+      '<div class="tr-body"><div class="tr-full"><h4>Not sure yet</h4><p class="tr-sure">' + NOT_SURE.sub + ' Pick this and tell us more in the next step.</p></div>' + trust() + '<button type="button" class="btn btn-light" data-confirm>' + (state.trip === NOT_SURE.id ? "Continue" : "Choose this") + "</button></div>";
   }
   $$("[data-view]").forEach(function (row) {
     row.classList.toggle("is-focus", row.dataset.view === viewed);
@@ -396,7 +405,7 @@ function renderTrips() {
   $("[data-list]").innerHTML = list.map(function (item) {
     return (
       '<label class="tr-item" data-view="' + item.id + '"><input type="radio" name="trip" value="' + item.id + '">' + tripPhoto(item, false) +
-      "<span><strong>" + item.name + "</strong><small>" + icon("clock") + item.hours + (item.when ? ", " + item.when : "") + "</small></span></label>"
+      "<span><strong>" + item.name + "</strong><small>" + icon("clock") + item.hours + (item.when ? ", " + item.when : "") + ' · <b class="tr-price">' + item.short + "</b></small></span></label>"
     );
   }).join("") +
     '<label class="tr-item" data-view="' + NOT_SURE.id + '"><input type="radio" name="trip" value="' + NOT_SURE.id + '"><span class="tr-help">' + icon("help") + "</span><span><strong>" + NOT_SURE.name + "</strong><small>Help me choose</small></span></label>";
@@ -771,6 +780,7 @@ function payload() {
     reason: REASONS[state.reason],
     category: label,
     trip: picked ? picked.name : "",
+    trip_price: picked && picked.price ? picked.price : "",
     botcheck: "",
   };
 }

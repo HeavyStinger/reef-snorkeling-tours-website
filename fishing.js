@@ -11,6 +11,8 @@ document.querySelectorAll(".addon").forEach(function (group) {
       other.setAttribute("aria-pressed", other === button);
     });
 
+    card.classList.toggle("food", button.dataset.food === "1");
+
     extras.forEach(function (item) {
       item.classList.toggle("off", button.dataset.food !== "1");
     });
